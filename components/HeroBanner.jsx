@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import React from 'react'
-import { urlFor } from '../lib/client'
+import Link from 'next/link';
+import React from 'react';
+import { urlFor } from '../lib/client';
 
 function HeroBanner({ bannerData }) {
   console.log(bannerData);
@@ -9,7 +9,7 @@ function HeroBanner({ bannerData }) {
       <div>
         <p className='beats-solo'>{bannerData.smallText}</p>
         <h3>{bannerData.midText}</h3>
-        <h2>{bannerData.largeText1}</h2>
+        <h1>{bannerData.largeText1}</h1>
         <img
           src={urlFor(bannerData.image)}
           alt='headphones'
@@ -22,13 +22,11 @@ function HeroBanner({ bannerData }) {
         </Link>
         <div className='desc'>
           <h5>Description</h5>
-          <p>
-            {bannerData.desc}
-          </p>
+          <p>{bannerData.desc}</p>
         </div>
       </div>
     </section>
   );
 }
 
-export default HeroBanner
+export default HeroBanner;
