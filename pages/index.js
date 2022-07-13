@@ -20,9 +20,11 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       {/* Footer */}
-      <Footer />
+      {/* <Footer /> */}
 
-      {/* <FooterBanner/> */}
+      <FooterBanner FooterBanner={bannerData.length && bannerData[0]} />
+
+      <Footer />
     </>
   );
 };

@@ -5,7 +5,7 @@ export default function Product({product:{name,price,image,slug}}) {
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
-        <div>
+        <div className='product-card'>
           <img src={urlFor(image && image[0])} alt='product image' className='product-image' width={250} height={250} />
           <p className='product-name'>{name}</p>
           <p className='product-price'>${price}</p>
