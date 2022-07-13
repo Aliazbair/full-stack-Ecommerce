@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { client } from '../lib/client';
-import { Footer, FooterBanner, HeroBanner, Product} from '../components'
+import { Footer, FooterBanner, HeroBanner, Product } from '../components';
 
 const Home = ({ products, bannerData }) => {
-
   return (
     <>
       <HeroBanner bannerData={bannerData.length && bannerData[0]} />
@@ -20,29 +19,25 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       {/* Footer */}
-      {/* <Footer /> */}
 
       <FooterBanner FooterBanner={bannerData.length && bannerData[0]} />
-
-      <Footer />
     </>
   );
 };
 
-
 // get product from sanity
 
-export const getServerSideProps=async()=>{
+export const getServerSideProps = async () => {
   // make query to get product
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
 
   // make query to get Banner
-  const bannerQuery=`*[_type =='banner']`;
-  const bannerData=await client.fetch(bannerQuery);
+  const bannerQuery = `*[_type =='banner']`;
+  const bannerData = await client.fetch(bannerQuery);
 
   return {
-    props: { products,bannerData },
+    props: { products, bannerData },
   };
-}
+};
 export default Home;
