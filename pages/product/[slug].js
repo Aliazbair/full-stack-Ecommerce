@@ -29,7 +29,7 @@ function ProductDetails({ products, product }) {
 
           {/* small image */}
           <div className='small-images-container'>
-            {image?.map((item, i) => {
+            {image?.map((item, i) => (
               <img
                 src={urlFor(item)}
                 key={i}
@@ -38,8 +38,8 @@ function ProductDetails({ products, product }) {
                   i === index ? 'small-image selected-image' : 'small-image'
                 }
                 alt='small image'
-              />;
-            })}
+              />
+            ))}
           </div>
         </div>
 
@@ -71,20 +71,28 @@ function ProductDetails({ products, product }) {
               </span>
             </p>
           </div>
-          <div className="buttons">
-              <button type="button" className="add-to-cart" onClick={()=>{}}> Add To Cart</button>
-              <button type="button" className="buy-now" onClick={()=>{}}> Buy Now</button>
+          <div className='buttons'>
+            <button type='button' className='add-to-cart' onClick={() => {}}>
+              {' '}
+              Add To Cart
+            </button>
+            <button type='button' className='buy-now' onClick={() => {}}>
+              {' '}
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
       {/* like products */}
-      <div className="maylike-products-wrapper">
-          <h2>You also Like</h2>
-          <div className="marquee">
-              <div className='maylike-products-container track'>
-                  {products.map((item)=><Product key={item._id} product={item} />)}
-              </div>
+      <div className='maylike-products-wrapper'>
+        <h2>You also Like</h2>
+        <div className='marquee'>
+          <div className='maylike-products-container track'>
+            {products.map((item) => (
+              <Product key={item._id} product={item} />
+            ))}
           </div>
+        </div>
       </div>
     </section>
   );
