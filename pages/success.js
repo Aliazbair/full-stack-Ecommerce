@@ -25,7 +25,7 @@ function Success() {
         <p className='description'>
           If you have any questions, please email
           <a className='email' href='mailto:order@example.com'>
-          ali@example.com
+          ali0995559052@gmail.com
           </a>
         </p>
         <Link href='/'>
